@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Dashboard",
+        "icon": "dashboard",
+        "path": "/dashboard"
+    },
+    {
+        "title": "Solicitudes",
+        "icon": "inventory",
+        "childrens": [
+            {
+                "title": "Recibidas",
+                "path": "/solicitudes"
+            }
+        ]
+    }
+]

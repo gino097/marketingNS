@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Dashboard",
+        "icon": "dashboard",
+        "path": "/dashboard"
+    },
+    {
+        "title": "Inventario",
+        "icon": "assessment",
+        "childrens": [
+            {
+                "title": "Items",
+                "path": "/items"
+            }
+        ]
+    },
+    {
+        "title": "Solicitudes",
+        "icon": "inventory",
+        "childrens": [
+            {
+                "title": "Recibidas",
+                "path": "/solicitudes"
+            }
+        ]
+    },
+    {
+        "title": "Reportes",
+        "icon": "summarize",
+        "path":"/reportes"
+    },
+    {
+        "title": "Configuración",
+        "icon": "settings",
+        "childrens": [
+            {
+                "title": "Ciudades",
+                "path": "/sucursal"
+            }
+        ]
+    },
+    {
+        "title": "Seguridad",
+        "icon": "security",
+        "childrens": [
+            {
+                "title": "Usuarios",
+                "path": "/usuarios"
+            },
+            {
+                "title": "Accesos",
+                "path": "/accesos"
+            }
+        ]
+    }
+    
+]

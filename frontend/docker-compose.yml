@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  app:
+    image: #{tknDkr.ImageName}#
+    networks:
+      - #{tknDkr.NetName}#
+    logging:
+      driver: json-file
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - #{tknDkr.DepPlace}#
+      labels:
+        SwarmChaosSelected: 'true'
+        traefik.enable: '#{tknDkr.TraefikEnable}#'
+        traefik.docker.network: '#{tknDkr.TraefikNetName}#'
+        traefik.frontend.rule: '#{tknDkr.TraefikRule}#'
+        traefik.port: '#{tknDkr.TraefikPort}#'
+        traefik.frontend.entryPoints: '#{tknDkr.TraefikEntryPoints}#'
+        #{tknDkr.TraefikRedirectEntryPoints}#
+      restart_policy:
+        condition: on-failure
+        window: 5s
+      update_config:
+        order: start-first
+        delay: 10s
+
+networks:
+  #{tknDkr.NetName}#:
+    external: true

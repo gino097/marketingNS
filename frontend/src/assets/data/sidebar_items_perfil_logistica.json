@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Dashboard",
+        "icon": "dashboard",
+        "path": "/dashboard"
+    },
+    {
+        "title": "Inventario",
+        "icon": "assessment",
+        "childrens": [
+            {
+                "title": "Items",
+                "path": "/items"
+            }
+        ]
+    },
+    {
+        "title": "Reportes",
+        "icon": "summarize",
+        "path":"/reportes"
+    }
+    
+]

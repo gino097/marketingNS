@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f1f5f9;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.font-title {
+  font-family: 'Open Sans', sans-serif;
+}
+.font-select {
+  font-family: 'DM Sans', sans-serif;
+}
+.font-msg {
+  font-family: 'Open Sans', sans-serif;
+}
+.btnConfRei{
+  background-color: #045c94;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 25px;
+  min-height:30px; 
+  min-width: 120px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+

@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon ./server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "debug": "~2.6.9",
+    "email": "^0.2.6",
+    "emailjs": "^4.0.1",
+    "excel4node": "^1.7.2",
+    "exceljs": "^4.3.0",
+    "express": "~4.16.1",
+    "express-async-handler": "^1.2.0",
+    "express-fileupload": "^1.4.0",
+    "image-downloader": "^4.3.0",
+    "js-sha512": "^0.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "moment": "^2.29.4",
+    "morgan": "~1.9.1",
+    "mssql": "^8.1.2",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.5",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "pdfkit": "^0.13.0",
+    "pdfkit-construct": "^1.2.3",
+    "ua-parser-js": "^1.0.2",
+    "validator": "^13.7.0",
+    "voilab-pdf-table": "^0.5.1",
+    "xlsx": "^0.18.5"
+  }
+}
