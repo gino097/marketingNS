@@ -11,23 +11,23 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import Button from "@material-tailwind/react/Button";
 import { useNavigate } from "react-router-dom";
 const ReportesScreen = () => {
-  const [id_permitido,setIds]=useState([14, 15, 16, 29]);
+  const [id_permitido, setIds] = useState([14, 15, 16, 29]);
   let navigate = useNavigate();
   const useData = useSelector((state) => state.userLogin);
   const { error, userInfo } = useData;
-  if(!userInfo) {navigate("/login")}
+  if (!userInfo) { navigate("/login") }
   useEffect(() => {
     if (!id_permitido.includes(userInfo.id_perfil)) {
       navigate("/errorRedirectScreen");
     }
   });
   const [tipoReport, setTipoReport] = useState(1);
-  const [nombreArchivo, setNombreArchivo]= useState("General");
+  const [nombreArchivo, setNombreArchivo] = useState("General");
   const dispatch = useDispatch();
   const saveValue = (e) => {
     setTipoReport(e.target.value);
-    var valueN=Number(e.target.value)-1;
-    var nombre=e.target[valueN].label;
+    var valueN = Number(e.target.value) - 1;
+    var nombre = e.target[valueN].label;
     setNombreArchivo(nombre);
   };
   const getReport = async () => {
