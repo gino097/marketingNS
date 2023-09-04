@@ -12,15 +12,3 @@ node_modules
 
 # Ignora archivos de configuración SASS
 .sass-cache
-
-# Ignora todos los archivos de png
-*.png
-
-# Ignora todos los archivos de jpg
-*.jpg
-
-# Ignora todos los archivos de jpeg
-*.jpeg
-
-# Ignora todos los archivos de gif
-*.gif

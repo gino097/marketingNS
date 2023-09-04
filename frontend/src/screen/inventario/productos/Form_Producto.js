@@ -67,7 +67,7 @@ const Form_Usuarios = (props) => {
   const [tipoItem, setTipoItem] = useState("");
   const [validacion, setValidacion] = useState(false);
   const [foto, setFoto] = useState("");
-  
+
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
 
@@ -78,9 +78,8 @@ const Form_Usuarios = (props) => {
       setNombre(companies.producto.MATE_NOMBRE);
       setStock(companies.producto.MATE_STOCK);
       setcodigoP(companies.producto.MATE_CODIGOP);
-
     }
-  }, [setNombre, setStock, setcodigoP, companies, titulo]);
+  }, [companies, titulo]);
 
   //COMBO REGIONES
   const result_region = useSelector((state) => state.regionList);
@@ -141,7 +140,7 @@ const Form_Usuarios = (props) => {
 
     var parametros;
     const formData = new FormData();
-    
+
 
     if (titulo === "Crear Item") {
       formData.append('file', file);
@@ -152,16 +151,16 @@ const Form_Usuarios = (props) => {
       formData.append("categoria", categoria);
       formData.append("ciudad", ciudad);
       formData.append("tipoItem", tipoItem);
-      
+
       //console.log(formData.entries())
       /*for (var key of formData.entries()) {//imprime el formData (no s epuede imprimir por console)
         console.log(key[0] + ', ' + key[1]);
       }*/
-      parametros={
-        keyword:keyword,
-        pageNumber:pageNumber,
-        pageNumberCurrent:pageNumberCurrent,
-        id_permitido:id_permitido
+      parametros = {
+        keyword: keyword,
+        pageNumber: pageNumber,
+        pageNumberCurrent: pageNumberCurrent,
+        id_permitido: id_permitido
       }
       createPro(formData, parametros);
     } else if (titulo === "Modificar Item") {
@@ -183,12 +182,12 @@ const Form_Usuarios = (props) => {
     } else if (titulo === "Modificar imagen") {
       formData.append("filename", filenameF);
       formData.append("file", file);
-      parametros={
-        id:data.codigo,
-        id_permitido:id_permitido,
-        keyword:keyword,
-        pageNumber:pageNumber,
-        pageNumberCurrent:pageNumberCurrent
+      parametros = {
+        id: data.codigo,
+        id_permitido: id_permitido,
+        keyword: keyword,
+        pageNumber: pageNumber,
+        pageNumberCurrent: pageNumberCurrent
       }
       for (var key of formData.entries()) {//imprime el formData (no s epuede imprimir por console)
         console.log(key[0] + ', ' + key[1]);
@@ -325,17 +324,17 @@ const Form_Usuarios = (props) => {
     setValidacion(result.validacion);
   }
   function validarTipoItem(event) {
-      const entrada = event.target.value;
-      var result = objvalidar.validarCombo(entrada, "-1", listmsg);
-      setMsgTipoItem(result.msg);
-      setTipoItem(result.data);
-      setValidacion(result.validacion);
-    }
+    const entrada = event.target.value;
+    var result = objvalidar.validarCombo(entrada, "-1", listmsg);
+    setMsgTipoItem(result.msg);
+    setTipoItem(result.data);
+    setValidacion(result.validacion);
+  }
 
   const saveFile = (e) => {
     var result = objvalidar.validarArchivo(e, listmsg);
     setFile(result.file);
-    const aux = convertName.randomico(32, 2) + (result.filename.replaceAll(" ",""));
+    const aux = convertName.randomico(32, 2) + (result.filename.replaceAll(" ", ""));
     setFileNameF(aux);
 
     setFileName(aux);
@@ -507,10 +506,10 @@ const Form_Usuarios = (props) => {
                   <option value="-1" selected>
                     Tipo de item
                   </option>
-                    <>
-                      <option value="stock">Merchandising / Papelería</option>
-                      <option value="fecha">Material de marca</option>
-                    </>
+                  <>
+                    <option value="stock">Merchandising / Papelería</option>
+                    <option value="fecha">Material de marca</option>
+                  </>
                 </select>
                 <LeyendaError>{msgTipoItem}</LeyendaError>
               </div>
@@ -625,12 +624,12 @@ const Form_Usuarios = (props) => {
             Campos de nuevo Item
           </h2>
           <div className="w-full px-6 py-2 bg-[#DADAF7]">
-          <ul className="list-disc text-xs px-2 ml-1 text-justify">
-            {titulo==="Crear Item" || titulo==="Modificar Item"?<li className="py-1"><b>Codigo.-</b> Codigo personalizado para el Item</li>:null}
-            {titulo==="Crear Item" || titulo==="Modificar Item"?<li className="py-1"><b>Nombre.-</b> Nombre del Item</li>:null}
-            {titulo==="Crear Item" || titulo==="Modificar Item"?<li className="py-1"><b>Stock.-</b> Stock del Item</li>:null}
-            {titulo==="Crear Item"?<li className="py-1"><b>Categoria.-</b> Categorias del Item (seleccionar minimo una categoria)</li>:null}
-            {titulo==="Crear Item" || titulo==="Modificar imagen"?<li className="py-1"><b>Imagen.-</b> Imagen del Item</li>:null}
+            <ul className="list-disc text-xs px-2 ml-1 text-justify">
+              {titulo === "Crear Item" || titulo === "Modificar Item" ? <li className="py-1"><b>Codigo.-</b> Codigo personalizado para el Item</li> : null}
+              {titulo === "Crear Item" || titulo === "Modificar Item" ? <li className="py-1"><b>Nombre.-</b> Nombre del Item</li> : null}
+              {titulo === "Crear Item" || titulo === "Modificar Item" ? <li className="py-1"><b>Stock.-</b> Stock del Item</li> : null}
+              {titulo === "Crear Item" ? <li className="py-1"><b>Categoria.-</b> Categorias del Item (seleccionar minimo una categoria)</li> : null}
+              {titulo === "Crear Item" || titulo === "Modificar imagen" ? <li className="py-1"><b>Imagen.-</b> Imagen del Item</li> : null}
             </ul>
           </div>
         </div>

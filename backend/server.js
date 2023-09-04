@@ -34,8 +34,8 @@ app.use(function(req, res, next) {
 });
 //*Apis
 app.use(fileUpload());
-console.log(__dirname+"/controllers/producto/imagesItems");
 const rutaimagenes= path.join(__dirname,"/controllers/producto/imagesItems/")
+console.log(rutaimagenes);
 app.use(express.static(rutaimagenes));
 app.use('/', cors(), indexRouter);
 app.use('/users', cors(), usersRouter);
