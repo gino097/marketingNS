@@ -18,9 +18,12 @@ async function generico_reporteGeneral_ExcelImagenes(res, comando, columnas_exce
 
   objSql.consulta_sql_reportes(comando, (result) => {
     let rowIndex = index_datos; //fila donde inician a agregarse los datos de base
+    //console.log(result);
     let numitem = 1;
     result.forEach(record => {
       // Ruta de la carpeta donde se encuentran las imágenes
+      const carpetaImagenes = path.join(__dirname, '../controllers/producto/imagesItems/');
+      //console.log("+++",carpetaImagenes);
       // Ruta completa de la imagen
       const imagePath = path.join(carpetaImagenes, record["MATE_IMG"]);
       const imageBuffer = fs.readFileSync(imagePath);
